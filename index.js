@@ -1,3 +1,5 @@
-throw new Error('Something get error!');
+const mymath = require('./MyMath');
+const component = require('./Component');
 
-console.log('HEEELP');
+console.log(component);
+// console.log(mymath.sum(2,6));
