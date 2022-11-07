@@ -1,15 +1,16 @@
 const fs = require('fs').promises;
 
-/*
-Задача: прочитати вміст текстового файлу і вивести його на консоль
-
-*/
-
-const promise = fs.readFile('./text.txt', 'utf-8')
+const promise = fs.readFile('./userData.json', 'utf-8')
                     .then(promiseValue => {
-                        const fileText = promiseValue + 'We can read and write to files';
-                        fs.writeFile('./newFile.txt', fileText);
+                        const obj = JSON.parse(promiseValue);
+                        fs.writeFile('.text.txt', `Hello, ${obj.firstName} ${obj.lastName}`)
                     })
 
+/*
+Прочитати дані з userData.json
+На основі розпарсених даних вивести в файл text.txt рядок тексту типу
+"Hello, {firstName} {lastName}"
+
+*/
 
                    
